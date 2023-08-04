@@ -25,7 +25,7 @@ namespace Html2ImageConverter.Converter
         private IFileService _fileService;
         public Html2Image(IProcessService? processService = null, IFileService? fileService = null)
         {
-            _directory = AppContext.BaseDirectory;
+            _directory = Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);//AppContext.BaseDirectory;
             _processService = processService ?? new ProcessService();
             _fileService = fileService ?? new FileService();
 
